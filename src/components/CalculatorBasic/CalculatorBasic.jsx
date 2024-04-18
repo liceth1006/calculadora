@@ -8,7 +8,7 @@ function CalculatorBasic() {
     <div className="card-header">
       <CalculatorDisplay></CalculatorDisplay>
     </div>
-    <div class="card-body">
+    <div className="card-body">
       <CalculatorButtons></CalculatorButtons>
     </div>
   </div>

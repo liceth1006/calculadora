@@ -1,9 +1,11 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import CalculatorBasic from "./components/CalculatorBasic/CalculatorBasic";
 import CalculatorAdvanced from "./components/CalculatorAdvanced/CalculatorAdvanced";
+import History from "./components/History/Histories";
 
 function App() {
   return (
@@ -16,7 +18,8 @@ function App() {
           <div className="card-body">
             <Routes>
               <Route path="/" element={<CalculatorBasic />} />
-              <Route path="/avanzado" element={<CalculatorAdvanced />} />
+              <Route path="/Avanzado" element={<CalculatorAdvanced />} />
+              <Route path="/Historial" element={<History />} />
             </Routes>
           </div>
         </div>
