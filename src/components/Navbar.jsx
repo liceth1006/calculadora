@@ -7,7 +7,7 @@ function Navbar() {
         {["Basico", "Avanzado", "Historial"].map((item, index) => (
           <li className="nav-item ms-2  " key={index}>
             <Link
-              className="nav-link"
+              className="nav-link fs-3"
               aria-current="true"
               to={item === "Basico" ? "/" : `/${item.toLowerCase()}`}
             >

@@ -25,7 +25,7 @@ function CalculatorButtons() {
   return (
     
     <div className="container-fluid text-center  ">
-     <input type="text" value={inputValue} onChange={handleInputChange} />
+     <input type="text" className="form-control border-2 border-primary p-5 fs-3 " value={inputValue} onChange={handleInputChange} />
       <div className="row mt-5">
         {segmentos.map((segmento, index) => (
           <div key={index} className="col-12 m-2">
