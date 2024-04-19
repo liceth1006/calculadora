@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className="card text-center m-5">
+        <div className="card text-center m-lg-5">
           <div className="card-header pb-0">
             <Navbar />
           </div>
