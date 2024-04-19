@@ -1,12 +1,11 @@
 import React from "react";
-import CalculatorDisplay from "./CalculatorBasicDisplay";
+
 import CalculatorButtons from "./CalculatorBasicButtons";
 
 function CalculatorBasic() {
   return (
     <div className="container-fluid">
-      <CalculatorDisplay></CalculatorDisplay>
-
+      <h2>titulo</h2>
       <CalculatorButtons></CalculatorButtons>
     </div>
   );

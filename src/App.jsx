@@ -6,11 +6,13 @@ import Navbar from "./components/Navbar";
 import CalculatorBasic from "./components/CalculatorBasic/CalculatorBasic";
 import CalculatorAdvanced from "./components/CalculatorAdvanced/CalculatorAdvanced";
 import History from "./components/History/Histories";
+import Header from "./Header";
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Header></Header>
         <div className="card text-center m-lg-5">
           <div className="card-header pb-0">
             <Navbar />

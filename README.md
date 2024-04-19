@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+### calculadora basica - CalculatorButtons.jsx
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Hacer los calculos de la calculadora( - hacer el switch case con las operaciones necesarias o de la forma que crea conveniente. 
+2. realizar las validaciones
+   - División por cero: Asegúrate de que el divisor no sea cero antes de realizar una operación de división.
+   - Formato válido de entrada: Verifica que la expresión ingresada por el usuario tenga un formato válido antes de intentar evaluarla.
+   - Operadores consecutivos: No permitas que haya operadores consecutivos en la expresión ingresada (por ejemplo, "2++3").
+   - Operadores al inicio o al final: Evita que la expresión comience o termine con un operador (por ejemplo, "+2" o "3\*").
+     )
+2. cambiar los colorez de los botones (arreglar la interfaz )
+3. arreglar el input la interfaz  
+4. Guardar las operaciones en el localStorage
+5. agregar titulo(archivo CalculatorButtons.jsx)
 
-## Available Scripts
+### calculadora avanzada CalculatorAdvancedButtons.jsx
 
-In the project directory, you can run:
+1. colocar las imagenes en la cards, las imagenes la tiene que buscan segun la funcion a calcular
+2. buscar como hacer los calculos para determinar cada funcion trigonometrica
+3. arreglar la interfaz del input
+4. realizar el onclick para cada button o card (se copia el mismo que se realice en la calculadora basica)
+5. agregar el titulo 
+6. agregar el nombre de la funcion a determinar a cada card(seno- coseno ....)
+7. Guardar las operaciones en el localStorage
 
-### `npm start`
+### historial  Histories.jsx
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. ver como traer la informacion del local storage y mostrarlo en la alert
+2. agregar un boton de reutilizar
+3. agregar la funcionalidad al boton, donde se pueda rederigir al link o pantalla de la calculadora para reutilizarla
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### general  App.jsx
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. colocar un boton para cambiar de color (temas)
+2. buscar y agregar el nombre del aplicativo
+3. buscar un logo y colocarlo 
+4. arreglar la barra de navegacion cambio de color 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

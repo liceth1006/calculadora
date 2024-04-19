@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "../../stylesheets/CalculatorBasicButtons.css"
 function CalculatorButtons() {
 
@@ -8,16 +9,30 @@ function CalculatorButtons() {
   for (let i = 0; i < miArray.length; i += 4) {
     segmentos.push(miArray.slice(i, i + 4));
   }
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+    console.log(e);
+  };
+
+  const handleButtonClick = (value) => {
+    setInputValue(prevValue => prevValue + value);
+    console.log(value);
+  };
+
 
   return (
-    <div className="container-fluid text-center bg-danger ">
-      <div className="row">
+    
+    <div className="container-fluid text-center  ">
+     <input type="text" value={inputValue} onChange={handleInputChange} />
+      <div className="row mt-5">
         {segmentos.map((segmento, index) => (
           <div key={index} className="col-12 m-2">
             {segmento.map((item, itemIndex) => (
-              <span key={itemIndex} className="btn btn-warning btn-size rounded-4 fs-3 fw-bold me-2 mb-2 ">
+              <button key={itemIndex} onClick={()=> handleButtonClick(item)} className="btn  btn-info shadow  btn-size rounded-4 fs-3 fw-bold me-2 mb-2 ">
                 {item}
-              </span>
+              </button>
             ))}
           </div>
         ))}
