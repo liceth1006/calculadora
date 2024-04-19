@@ -10,7 +10,7 @@ function CalculatorAdvancedButtons() {
           <div className="card">
             <img
               src={require("../../images/prueba.PNG")}
-              className="card-img-top"
+              className="card-img-top img-thumbnail"
               alt="..."
             />
             <div className="card-body">

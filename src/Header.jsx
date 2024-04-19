@@ -9,7 +9,7 @@ function Header() {
             <a href="/">
               <img
                 className="img-fluid d-inline-block"
-                src="../../assets/logo-uniempresarial.webp"
+                src={require ("../src/images/prueba.PNG")}
                 alt="Logo"
                 width="300.47"
                 height="80"
@@ -18,7 +18,7 @@ function Header() {
           </div>
         </div>
         <div className="col-10 col-md-6 pt-3  ">
-          <h1 className="text-center blue-color-text">titulo</h1>
+          <h1 className="text-center text-info-emphasis">CaculApp</h1>
         </div>
         <div className="col-2 col-md-2 p-md-3 ">
         <div className="form-check form-switch">
