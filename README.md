@@ -1,16 +1,16 @@
 ### calculadora basica - CalculatorButtons.jsx
 
-1. Hacer los calculos de la calculadora( - hacer el switch case con las operaciones necesarias o de la forma que crea conveniente. 
+1. Hacer los calculos de la calculadora( - hacer el switch case con las operaciones necesarias o de la forma que crea conveniente.Realizada 
 2. realizar las validaciones
-   - División por cero: Asegúrate de que el divisor no sea cero antes de realizar una operación de división.
-   - Formato válido de entrada: Verifica que la expresión ingresada por el usuario tenga un formato válido antes de intentar evaluarla.
-   - Operadores consecutivos: No permitas que haya operadores consecutivos en la expresión ingresada (por ejemplo, "2++3").
-   - Operadores al inicio o al final: Evita que la expresión comience o termine con un operador (por ejemplo, "+2" o "3\*").
+   - División por cero: Asegúrate de que el divisor no sea cero antes de realizar una operación de división.Realizada
+   - Formato válido de entrada: Verifica que la expresión ingresada por el usuario tenga un formato válido antes de intentar evaluarla.Realizada
+   - Operadores consecutivos: No permitas que haya operadores consecutivos en la expresión ingresada (por ejemplo, "2++3").Realizada
+   - Operadores al inicio o al final: Evita que la expresión comience o termine con un operador (por ejemplo, "+2" o "3\*").Realizada
      )
 2. cambiar los colorez de los botones (arreglar la interfaz )
 3. arreglar el input la interfaz  
 4. Guardar las operaciones en el localStorage
-5. agregar titulo(archivo CalculatorButtons.jsx)
+5. agregar titulo(archivo CalculatorButtons.jsx) Realizado
 
 ### calculadora avanzada CalculatorAdvancedButtons.jsx
 

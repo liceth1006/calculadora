@@ -5,7 +5,7 @@ import CalculatorButtons from "./CalculatorBasicButtons";
 function CalculatorBasic() {
   return (
     <div className="container-fluid">
-      <h2>titulo</h2>
+      <h2 className="text-danger">Calculadora Basica</h2>
       <CalculatorButtons></CalculatorButtons>
     </div>
   );

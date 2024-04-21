@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../stylesheets/CalculatorBasicButtons.css";
 
 function CalculatorButtons() {
-  const miArray = ["AC", "X", "%", "/", 7, 8, 9, "*", 4, 5, 6, "-", 1, 2, 3, "+", "", 0, ",", "="];
+  const miArray = ["AC", "X", "%", "/", 7, 8, 9, "*", 4, 5, 6, "-", 1, 2, 3, "+", "", 0, ".", "="];
   const segmentos = [];
 
   for (let i = 0; i < miArray.length; i += 4) {
@@ -19,9 +19,9 @@ function CalculatorButtons() {
       realizarOperacion();
     } else if (value === "AC") {
       setInputValue("");
-    }  else if (value === "%") {
+    } else if (value === "%") {
       setInputValue((parseFloat(inputValue) / 100).toString());
-    }else {
+    } else {
       setInputValue(prevValue => prevValue + value);
     }
   };
@@ -35,11 +35,13 @@ function CalculatorButtons() {
   };
 
   const calcularResultado = (expresion) => {
-    let numeros = expresion.split(/[-+*/]/).map(num => parseFloat(num));
-    let operadores = expresion.split(/[0-9.]+/).filter(op => op);
     
+    let numeros = expresion.split(/[-+*/]/).map(num => parseFloat(num));
+    let operadores = expresion.split(/[\d.]+/).filter(op => op !== "");
+
     let resultado = numeros[0];
 
+    
     for (let i = 0; i < operadores.length; i++) {
       if (operadores[i] === "+") {
         resultado += numeros[i + 1];
@@ -48,14 +50,13 @@ function CalculatorButtons() {
       } else if (operadores[i] === "*") {
         resultado *= numeros[i + 1];
       } else if (operadores[i] === "/") {
-        if(numeros[i]>0){
-        if(resultado!==isFinite){
-          setInputValue("No se permite dividir entre 0");
+        if (numeros[i + 1] !== 0) {
+          resultado /= numeros[i + 1];
+        } else {
+          throw new Error("División por cero");
         }
-        else{  
-        resultado /= numeros[i + 1];}}
-      }else if(operadores[i]==="%"){
-        resultado %=numeros[i+1]
+      } else if (operadores[i] === "%") {
+        resultado %= numeros[i + 1];
       }
     }
 
