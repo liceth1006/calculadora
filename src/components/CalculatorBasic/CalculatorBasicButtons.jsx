@@ -1,9 +1,8 @@
-import React from "react";
-import { useState } from "react";
-import "../../stylesheets/CalculatorBasicButtons.css"
-function CalculatorButtons() {
+import React, { useState } from "react";
+import "../../stylesheets/CalculatorBasicButtons.css";
 
-  const miArray = ["AC","X","%","/",7, 8, 9,"*",4,5,6,"-",1,2,3,"+","",0,",","="];
+function CalculatorButtons() {
+  const miArray = ["AC", "X", "%", "/", 7, 8, 9, "*", 4, 5, 6, "-", 1, 2, 3, "+", "", 0, ",", "="];
   const segmentos = [];
 
   for (let i = 0; i < miArray.length; i += 4) {
@@ -13,14 +12,55 @@ function CalculatorButtons() {
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
-    console.log(e);
   };
 
   const handleButtonClick = (value) => {
-    setInputValue(prevValue => prevValue + value);
-    console.log(value);
+    if (value === "=") {
+      realizarOperacion();
+    } else if (value === "AC") {
+      setInputValue("");
+    }  else if (value === "%") {
+      setInputValue((parseFloat(inputValue) / 100).toString());
+    }else {
+      setInputValue(prevValue => prevValue + value);
+    }
   };
 
+  const realizarOperacion = () => {
+    try {
+      setInputValue(calcularResultado(inputValue).toString());
+    } catch (error) {
+      setInputValue("Error");
+    }
+  };
+
+  const calcularResultado = (expresion) => {
+    let numeros = expresion.split(/[-+*/]/).map(num => parseFloat(num));
+    let operadores = expresion.split(/[0-9.]+/).filter(op => op);
+    
+    let resultado = numeros[0];
+
+    for (let i = 0; i < operadores.length; i++) {
+      if (operadores[i] === "+") {
+        resultado += numeros[i + 1];
+      } else if (operadores[i] === "-") {
+        resultado -= numeros[i + 1];
+      } else if (operadores[i] === "*") {
+        resultado *= numeros[i + 1];
+      } else if (operadores[i] === "/") {
+        if(numeros[i]>0){
+        if(resultado!==isFinite){
+          setInputValue("No se permite dividir entre 0");
+        }
+        else{  
+        resultado /= numeros[i + 1];}}
+      }else if(operadores[i]==="%"){
+        resultado %=numeros[i+1]
+      }
+    }
+
+    return resultado;
+  };
 
   return (
     
@@ -38,7 +78,6 @@ function CalculatorButtons() {
         ))}
       </div>
     </div>
-
   );
 }
 
