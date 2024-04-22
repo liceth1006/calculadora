@@ -1,32 +1,21 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import CalculatorBasic from "./components/CalculatorBasic/CalculatorBasic";
-import CalculatorAdvanced from "./components/CalculatorAdvanced/CalculatorAdvanced";
-import History from "./components/History/Histories";
+import CalculatorButtons from "./components/CalculatorButtons";
 import Header from "./Header";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header></Header>
-        <div className="card text-center m-lg-5">
-          <div className="card-header pb-0">
-            <Navbar />
-          </div>
-          <div className="card-body">
-            <Routes>
-              <Route path="/" element={<CalculatorBasic />} />
-              <Route path="/Avanzado" element={<CalculatorAdvanced />} />
-              <Route path="/Historial" element={<History />} />
-            </Routes>
+    <div className="App pb-5">
+      <Header></Header>
+      <div class="container">
+        <div class="row justify-content-center mt-5 ">
+          <div class="col-md-6  ">
+                <CalculatorButtons></CalculatorButtons>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </Router>
   );
 }
 

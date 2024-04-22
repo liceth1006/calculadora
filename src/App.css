@@ -2,3 +2,61 @@
 margin: 0;
 padding: 0;
 }
+:root {
+  --background-first-color: url('./images/fondo3.jpg');
+  --background-color:#14141480;
+  --background-button-color: #e0f004;
+  --background-second-button-color: #e2f864;
+  --background-display-color: #ffffff6e;
+  --first-color: #fffcfc;
+  --second-color:#ffffff;
+}
+[data-theme="Kawai"] {
+  --background-first-color: url('./images/fondo2.jpg');
+  --background-color:#ffffff80;
+  --background-second-color:#000000;
+  --background-button-color: #00D1E0;
+  --background-second-button-color: #E67CF3;
+  --background-display-color: #F0D4CF;
+  --first-color: #1b0220;
+  --second-color:#000000;
+}
+[data-theme="universe"] {
+  --background-first-color: url('./images/fondo3.jpg');
+  --background-color:#14141480;
+  --background-button-color: #e0f004;
+  --background-second-button-color: #e2f864;
+  --background-display-color: #ffffff6e;
+  --first-color: #fffcfc;
+  --second-color:#ffffff;
+}
+[data-theme="tema4"] {
+  --background-first-color: url('./images/fondo3.jpg');
+  --background-color:#14141480;
+  --background-button-color: #e0f004;
+  --background-second-button-color: #e2f864;
+  --background-display-color: #ffffff6e;
+  --first-color: #000000;
+  --second-color:#ffff;
+}
+[data-theme="tema4"] {
+  --background-first-color: url('./images/fondo3.jpg');
+  --background-color:#14141480;
+  --background-button-color: #e0f004;
+  --background-second-button-color: #e2f864;
+  --background-display-color: #ffffff6e;
+  --first-color: #000000;
+  --second-color:#ffff;
+}
+
+
+body{
+  background-color: var(--background-second-color);
+  background-image: var(--background-first-color);
+  background-size: cover;
+  background-position: center; 
+}
+
+.text-color{
+  color: var(--first-color);
+}

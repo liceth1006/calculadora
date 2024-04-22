@@ -1,0 +1,23 @@
+.btn-size {
+  display: inline-block;
+  width: 20%; 
+  height: 100%; 
+}
+
+.bg-button-color{
+  background-color: var(--background-button-color);
+  
+}
+.bg-button-second-color{
+  background-color: var(--background-second-button-color);
+
+}
+
+.bg-color{
+  background-color: var(--background-color);
+  color: var(--second-color);
+}
+.bg-color:hover{
+  color: var(--second-color);
+  border-color: var(--second-color);
+}
