@@ -39,7 +39,12 @@ function CalculatorButtons() {
       setInputValue(prevValue => prevValue + result);
     } else if (value === "%") {
       setInputValue((parseFloat(inputValue) / 100).toString());
-    } else {
+    } else if(value==="√")
+    {setInputValue(2+"√("+inputValue+")")}
+    else if(value==="ln"){
+      setInputValue(0+"ln("+inputValue+")");
+    }
+    else {
       setInputValue(prevValue => prevValue + value);
     }
   };
@@ -55,13 +60,10 @@ function CalculatorButtons() {
   };
 
   const calcularResultado = (expresion) => {
-    
-    let numeros = expresion.split(/[-+*/]/).map(num => parseFloat(num));
-    let operadores = expresion.split(/[\d.]+/).filter(op => op !== "");
-
+    let numeros = expresion.match(/-?\d+(\.\d+)?/g).map(num => parseFloat(num));
+    let operadores = expresion.match(/[-+*^√/]|ln/g);  
     let resultado = numeros[0];
 
-    
     for (let i = 0; i < operadores.length; i++) {
       if (operadores[i] === "+") {
         resultado += numeros[i + 1];
@@ -75,11 +77,19 @@ function CalculatorButtons() {
         } else {
           throw new Error("División por cero");
         }
-      } else if (operadores[i] === "%") {
-        resultado %= numeros[i + 1];
+      } else if (operadores[i] === "^") {
+        resultado **= numeros[i + 1];
+      } else if (operadores[i] === "√") {
+        resultado = Math.sqrt(numeros[i + 1]);
+      } else if (operadores[i] === "ln") {
+        if (numeros[i + 1] > 0) {
+          resultado =Math.log(numeros[i + 1]);
+        } else {
+          throw new Error("El argumento del logaritmo debe ser un número positivo mayor que cero");
+        }
       }
     }
-
+  
     return resultado;
   };
 
