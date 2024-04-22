@@ -1,22 +1,18 @@
 import React from "react";
-import { ReactComponent as Logo } from "../src/images/logo.svg";
+import { ReactComponent as Logo } from "../images/logo.svg";
 function Header() {
 
   const themes = [
     "Kawai",
-    "universe",
-    "Enchanted Nightfall","Crypto","Color"
+    "universe","Crypto","Color"
   ];
 
 const selectTheme = (index) => {
   const theme = themes[index];
   document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("selectedTheme", theme);
 };
 const handleItemClick = (index) => {
   selectTheme(index);
-  console.log("click")
-  console.log(index)
 };
 
 

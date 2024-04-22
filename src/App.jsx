@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import CalculatorButtons from "./components/CalculatorButtons";
-import Header from "./Header";
+import Header from "./components/Header";
 
 function App() {
   return (
