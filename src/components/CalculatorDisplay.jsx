@@ -12,4 +12,4 @@ function CalculatorDisplay({ value }) {
   );
 }
 
-export default CalculatorDisplay
+export default CalculatorDisplay;

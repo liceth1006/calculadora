@@ -5,7 +5,7 @@ function Header() {
   const themes = [
     "Kawai",
     "universe",
-    "Enchanted Nightfall","tema3","tema4"
+    "Enchanted Nightfall","Crypto","Color"
   ];
 
 const selectTheme = (index) => {
@@ -42,7 +42,7 @@ const handleItemClick = (index) => {
           </div>
         </div>
         <div className="col-12 col-md-6 pt-3  ">
-          <h1 className="text-center text-color fs-1 fw-bold">CalcuApp</h1>
+          <h1 className="text-center text-color fs-1 fw-bold ">CalcuApp</h1>
         </div>
         <div className="col-12 col-md-2 p-md-3 ">
         <div className="dropdown">

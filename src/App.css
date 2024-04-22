@@ -30,23 +30,25 @@ padding: 0;
   --first-color: #fffcfc;
   --second-color:#ffffff;
 }
-[data-theme="tema4"] {
-  --background-first-color: url('./images/fondo3.jpg');
+[data-theme="Crypto"] {
+  --background-first-color: url('./images/fondo4.jpg');
   --background-color:#14141480;
-  --background-button-color: #e0f004;
+  --background-button-color: #4fed57;
   --background-second-button-color: #e2f864;
   --background-display-color: #ffffff6e;
-  --first-color: #000000;
+  --first-color: #3de812;
   --second-color:#ffff;
 }
-[data-theme="tema4"] {
-  --background-first-color: url('./images/fondo3.jpg');
-  --background-color:#14141480;
-  --background-button-color: #e0f004;
+[data-theme="Color"] {
+  --background-first-color: url('./images/fondo5.jpg');
+  --background-color:#f7f6f680;
+  --background-button-color: #f08a04e9;
   --background-second-button-color: #e2f864;
   --background-display-color: #ffffff6e;
-  --first-color: #000000;
-  --second-color:#ffff;
+  --first-color: #a3f6e6;
+  --second-color:#fc0606;
+  
+  
 }
 
 
@@ -59,4 +61,11 @@ body{
 
 .text-color{
   color: var(--first-color);
+  
 }
+
+.text-center{
+  text-decoration:dotted;
+    
+}
+
