@@ -39,8 +39,7 @@ function CalculatorButtons() {
       setInputValue(prevValue => prevValue + result);
     } else if (value === "%") {
       setInputValue((parseFloat(inputValue) / 100).toString());
-    } else if(value==="√")
-    {setInputValue(2+"√("+inputValue+")")}
+    } 
     else if(value==="ln"){
       setInputValue(0+"ln("+inputValue+")");
     }
@@ -80,7 +79,7 @@ function CalculatorButtons() {
       } else if (operadores[i] === "^") {
         resultado **= numeros[i + 1];
       } else if (operadores[i] === "√") {
-        resultado = Math.sqrt(numeros[i + 1]);
+        resultado = Math.sqrt(numeros[i]);
       } else if (operadores[i] === "ln") {
         if (numeros[i + 1] > 0) {
           resultado =Math.log(numeros[i + 1]);
