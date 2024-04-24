@@ -59,38 +59,85 @@ function CalculatorButtons() {
   };
 
   const calcularResultado = (expresion) => {
-    let numeros = expresion.match(/-?\d+(\.\d+)?/g).map(num => parseFloat(num));
-    let operadores = expresion.match(/[-+*^√/]|ln/g);  
-    let resultado = numeros[0];
+   
 
-    for (let i = 0; i < operadores.length; i++) {
-      if (operadores[i] === "+") {
-        resultado += numeros[i + 1];
-      } else if (operadores[i] === "-") {
-        resultado -= numeros[i + 1];
-      } else if (operadores[i] === "*") {
-        resultado *= numeros[i + 1];
-      } else if (operadores[i] === "/") {
-        if (numeros[i + 1] !== 0) {
-          resultado /= numeros[i + 1];
-        } else {
-          throw new Error("División por cero");
+    const precedence = {
+      '+': 1,
+      '-': 1,
+      '*': 2,
+      '/': 2,
+      '%': 2,
+      '^': 3,
+      '√': 4
+      };
+      function shuntingYard(tokens) {
+        const outputQueue = [];
+        const operatorStack = [];
+        tokens.forEach(token => {
+            if (/\d/.test(token)) {
+            outputQueue.push(parseFloat(token));
+            } else if (token in precedence) {
+            while (
+                operatorStack.length > 0 &&
+                precedence[token] <= precedence[operatorStack[operatorStack.length - 1]]
+            ) {
+                outputQueue.push(operatorStack.pop());
+            }
+            operatorStack.push(token);
+            }
+        });
+        while (operatorStack.length > 0) {
+            outputQueue.push(operatorStack.pop());
         }
-      } else if (operadores[i] === "^") {
-        resultado **= numeros[i + 1];
-      } else if (operadores[i] === "√") {
-        resultado = Math.sqrt(numeros[i]);
-      } else if (operadores[i] === "ln") {
-        if (numeros[i + 1] > 0) {
-          resultado =Math.log(numeros[i + 1]);
-        } else {
-          throw new Error("El argumento del logaritmo debe ser un número positivo mayor que cero");
-        }
-      }
+        return outputQueue;
     }
-  
-    return resultado;
-  };
+
+    function evaluatePostfix(tokens) {
+    const stack = [];
+
+    tokens.forEach(token => {
+        if (typeof token === 'number') {
+            stack.push(token);
+            } else {
+            const b = stack.pop();
+            const a = stack.pop();
+            switch (token) {
+                case '+':
+                stack.push(a + b);
+                break;
+                case '-':
+                stack.push(a - b);
+                break;
+                case '*':
+                stack.push(a * b);
+                break;
+                case '/':
+                stack.push(a / b);
+                break;
+                case '%':
+                stack.push(a % b);
+                break;
+                case '^':
+                stack.push(a ** b);
+                break
+                case '√': 
+                stack.push(Math.sqrt(b))
+                break  
+                default:
+                throw new Error('Operador desconocido: ' + token);
+            }
+        }
+    });
+
+    return stack[0]; // resultado
+    }
+    const tokens = expresion.match(/[+\-*√/^%]|\d+/g);
+    console.log(tokens);
+    const postfix = shuntingYard(tokens);
+    console.log(postfix);
+    return evaluatePostfix(postfix);
+} 
+
 
   return (
     
